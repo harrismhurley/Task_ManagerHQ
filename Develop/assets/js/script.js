@@ -12,29 +12,8 @@ function generateTaskId(selectedDate) {
     return taskID;
 }
 
-// Todo: create a function to create a task card
-function createTaskCard(task) {
-    const card = document.createElement('div');
-    card.classList.add('taskCard', 'card', 'mb-3');
-    card.id = task.id;
-
-    card.innerHTML = `
-        <div class="card">
-            <h5 class="card-header">${task.name}</h5>
-            <div class="card-body">
-                <p class="card-text">${task.description}</p>
-                <p class="card-text">Due Date: ${task.dueDate}</p>
-                <a href="#" class="btn btn-danger border-light">Delete</a>
-            </div>
-        </div>
-    `;
-
-    return card;
-}
 
 
-
-// Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
     // Retrieve tasks from local storage
     taskList = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -62,7 +41,7 @@ function renderTaskList() {
         }
     });
 
-    // Make cards draggable
+    // Apply draggable behavior to all task cards
     $('.taskCard').draggable({
         revert: 'invalid', // Snap back if not dropped in a droppable area
         containment: 'document',
@@ -75,7 +54,37 @@ function renderTaskList() {
 }
 
 
+// Todo: create a function to create a task card
+function createTaskCard(task) {
+    const currentDate = new Date();
+    const dueDate = new Date(task.dueDate);
+    const twoDaysAhead = new Date(currentDate);
+    twoDaysAhead.setDate(currentDate.getDate() + 2);
 
+    const card = document.createElement('div');
+    card.classList.add('taskCard', 'card', 'mb-3');
+    card.id = task.id;
+
+    let backgroundClass = '';
+    if (dueDate < currentDate) {
+        backgroundClass = 'bg-danger';
+    } else if (dueDate <= twoDaysAhead) {
+        backgroundClass = 'bg-warning';
+    }
+
+    card.innerHTML = `
+        <div class="card ${backgroundClass}">
+            <h5 class="card-header">${task.name}</h5>
+            <div class="card-body">
+                <p class="card-text">${task.description}</p>
+                <p class="card-text">Due Date: ${task.dueDate}</p>
+                <a href="#" class="btn btn-danger border-light">Delete</a>
+            </div>
+        </div>
+    `;
+
+    return card;
+}
 
 // Todo: create a function to handle adding a new task
 function handleAddTask(event) {
@@ -109,6 +118,9 @@ function handleAddTask(event) {
 
     // Append the task card to the "To Do" column
     $('#todo-cards').append(card);
+
+    // Render the updated task list
+    renderTaskList();
 }
 
 
