@@ -87,8 +87,6 @@ function createTaskCard(task) {
     `;
 
     return card;
-
-    handleDrop();
 }
 
 // Todo: create a function to handle adding a new task
