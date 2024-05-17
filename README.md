@@ -1,100 +1,67 @@
-# 05 Third-Party APIs: Task Board
+# Task_ManagerHQ
+    
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+## Description
 
-## Your Task
+The Task Manager Application is a web-based tool designed to help you organize and manage your tasks effectively. With this application, you can create, update, and track tasks with ease, allowing you to stay on top of your responsibilities and improve your productivity.
 
-Create a simple task board application that allows a team to manage project tasks by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Deployed Application URL
 
-You'll need to use the [Day.js](https://day.js.org/en/) library to work with dates. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
+[Task_ManagerHQ](https://harrismhurley.github.io/Task_ManagerHQ/)
 
-## User Story
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [How to Contribute](#how-to-contribute)
+* [License](#license)
 
-```md
-AS A project team member with multiple tasks to organize
-I WANT a task board 
-SO THAT I can add individual project tasks, manage their state of progress and track overall project progress accordingly
-```
+## Installation
 
-## Acceptance Criteria
+N/A
 
-```md
-GIVEN a task board to manage a project
-WHEN I open the task board
-THEN the list of project tasks is displayed in columns representing the task progress state (Not Yet Started, In Progress, Completed)
-WHEN I view the task board for the project
-THEN each task is color coded to indicate whether it is nearing the deadline (yellow) or is overdue (red)
-WHEN I click on the button to define a new task
-THEN I can enter the title, description and deadline date for the new task into a modal dialog
-WHEN I click the save button for that task
-THEN the properties for that task are saved in localStorage
-WHEN I drag a task to a different progress column
-THEN the task's progress state is updated accordingly and will stay in the new column after refreshing
-WHEN I click the delete button for a task
-THEN the task is removed from the task board and will not be added back after refreshing
-WHEN I refresh the page
-THEN the saved tasks persist
-```
+## Usage
+1. Creating a Task:
+    - Click on the "Add Task" button to open the task creation modal.
+    - Enter the task details, including title, description, and due date.
+    - Click "Save" to add the task to the list.
 
-The following animation demonstrates the application functionality:
+2. Updating Task Status:
+    - Drag a task card from one status lane to another to update its status.
+    - Tasks can be moved between "To Do," "In Progress," and "Done" lanes.
 
-![A user adds three tasks to the task board and changes the state of two of them to in progress and then completion. The user then deletes the two cards in the done column.](./Assets/05-third-party-apis-homework-demo.gif)
+3. Deleting a Task:
+    - Click on the "Delete" button on a task card to remove it from the list.
 
-## Grading Requirements
+## Credits
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+[Xander Rapstine](https://github.com/Xandromus)
+[Michael McEwen](https://github.com/mcewball13)
 
-This Challenge is graded based on the following criteria:
+## Features
 
-### Technical Acceptance Criteria: 40%
+- Task Creation: Easily create new tasks with a title, description, and due date.
+- Task Status Tracking: Track the status of each task, including "To Do," "In Progress," and "Done."
+- Drag-and-Drop Interface: Intuitive drag-and-drop interface for moving tasks between different status lanes.
+- Task Deletion: Remove tasks from the list when they are no longer needed.
+- Responsive Design: The application is responsive and works seamlessly regardless of window size.
+- Data Persistence: Tasks are saved locally using browser storage, ensuring that your task list is preserved even when you close the browser.
 
-* Satisfies all of the above acceptance criteria plus the following:
 
-  * Uses the Day.js library to work with dates
+## Screenshots
+![tasks in local storage](./images/localStorage.png)
+![modal screen](./images/modalSubmit.png)
+![Task Status](./images/taskStatus.png)
 
-### Deployment: 32%
 
-* Application deployed at live URL
+## How to Contribute
+If you would like to contribute you can contact me [Via Email](mailto:harrismhurley@icloud.com?subject=[GitHub]%20Dev%20Connect) or visit [github](https://github.com/harrismhurley).
 
-* Application loads with no errors
 
-* Application GitHub URL submitted
+## License 
+This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
-* GitHub repo contains application code
 
-### Application Quality: 15%
 
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the Challenge instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

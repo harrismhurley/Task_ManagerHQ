@@ -162,7 +162,11 @@ function handleDrop() {
                     break;
                 case 'done':
                     targetContainer = $('#done-cards');
+
+                    // Remove background class from the dropped card
+                    droppedCard.find('.card').removeClass('bg-danger bg-warning');
                     break;
+                    
                 default:
                     console.error('Invalid target lane:', targetLaneId);
                     return; // Exit if target lane is invalid
@@ -218,4 +222,3 @@ $(document).ready(function () {
     // Render the initial task list
     renderTaskList();
 });
-
