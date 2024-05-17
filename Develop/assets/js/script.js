@@ -1,3 +1,4 @@
+// Retrieve tasks and nextId from localStorage
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 
@@ -42,19 +43,15 @@ function renderTaskList() {
 
     // Apply draggable behavior to all task cards
     $('.taskCard').draggable({
-        revert: 'invalid',
+        revert: 'invalid', // Snap back if not dropped in a droppable area
         containment: 'document',
-        helper: 'clone',
+        helper: 'clone', // Drag a clone of the card
         zIndex: 100
     });
-
-    // Remove background class from task cards in the "done" section
-    $('#done-cards .taskCard').removeClass('bg-danger bg-warning');
 
     // Make lanes droppable
     handleDrop();
 }
-
 
 
 // Todo: create a function to create a task card
@@ -98,6 +95,8 @@ function handleAddTask(event) {
     const title = $('#title').val();
     const description = $('#description').val();
     const dueDate = $('#dueDate').val();
+
+    // Validate input (you can add more validation if needed)
 
     // Create a new task object
     const newTask = {
@@ -163,10 +162,10 @@ function handleDrop() {
                     break;
                 case 'done':
                     targetContainer = $('#done-cards');
-
-                    // Remove background class from the dropped card
-                    droppedCard.find('.card').removeClass('bg-danger bg-warning');
                     break;
+                default:
+                    console.error('Invalid target lane:', targetLaneId);
+                    return; // Exit if target lane is invalid
             }
 
             // Move the task card to the target container
@@ -204,10 +203,6 @@ function handleDrop() {
 }
 
 
-
-
-
-
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
 
@@ -223,3 +218,4 @@ $(document).ready(function () {
     // Render the initial task list
     renderTaskList();
 });
+
