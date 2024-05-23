@@ -1,5 +1,22 @@
 # Task_ManagerHQ
     
+
+ - Add validation to ensure that tasks have valid titles, descriptions, and due dates before saving. 
+ 
+ - Implement error handling for user input and potential issues with local storage operations.
+
+ - Ensure consistency in naming conventions. For instance, use either camelCase or snake_case throughout the code. 
+
+ - Reduce duplication in the modal body by creating a function to generate form elements. This will make the code cleaner and easier to maintain. 
+
+ - Separate concerns by moving task-related logic to a dedicated module or file, rather than keeping everything in a single script file. 
+
+ - Add more comments and documentation to explain the purpose and functionality of key code sections, making it easier for others (and future you) to understand. 
+
+ - The draggable and droppable functionality with a few improvements, particularly in validation, error handling, and code organization, your task board will meet the assignment criteria
+
+
+
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ## Description
 
